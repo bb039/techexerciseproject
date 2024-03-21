@@ -125,8 +125,9 @@ public class Contactmaker extends HttpServlet {
 				String email = request.getParameter("email").trim();
 				String phone_number = request.getParameter("phone_number").trim();
 				String address = request.getParameter("address").trim();
-				String sqlcommand = "insert into contacts (first_name, last_name, email, phone_number, address) values ('" + first_name + "', '" + last_name + "', '" + email + "', '" + phone_number + "', '" + address + ");";
+				String sqlcommand = "insert into contacts (first_name, last_name, email, phone_number, address) values ('" + first_name + "', '" + last_name + "', '" + email + "', '" + phone_number + "', '" + address + "');";
 		    	PreparedStatement prepState = connection.prepareStatement(sqlcommand);
+		    	System.out.println(sqlcommand);
 		    	int rs = prepState.executeUpdate();
 		    	
 		    	doGet(request,response);
